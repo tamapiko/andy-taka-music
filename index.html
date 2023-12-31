@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -76,7 +74,7 @@
 </head>
 <body>
     <header>
-        <h1>Andy Taka Music</h1>
+        <!-- Andy Taka Musicの文字を削除 -->
     </header>
     <section id="music-section">
         <!-- ここに音楽関連のコンテンツを追加 -->
@@ -106,10 +104,46 @@
         <div class="youtube-container" id="youtube-player"></div>
     </section>
     <footer>
-        <p>&copy; 2023 Andy Taka Music</p>
+        <!-- Andy Taka Musicの文字を削除 -->
     </footer>
     <script>
-        // 以前提供されたYouTube APIコードをここに追加
+        function loadYouTubeAPI() {
+            gapi.load('client', initClient);
+        }
+
+        function initClient() {
+            gapi.client.init({
+                apiKey: 'AIzaSyCP3uRQEPmUjnoQt2wbZKeHHChKvDTPOpo', // 仮のAPIキー
+                discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest"],
+            }).then(() => {
+                // チャンネルの動画情報を取得
+                fetchLatestVideo('UCrwLDxvKt_IfvbfSH6vvXTQ');
+            });
+        }
+
+        function fetchLatestVideo(channelId) {
+            gapi.client.youtube.search.list({
+                part: 'snippet',
+                channelId: channelId,
+                order: 'date',
+                type: 'video',
+            }).then(response => {
+                const videoData = response.result.items[0];
+                const videoId = videoData.id.videoId;
+                displayVideo(videoId);
+            }, handleError);
+        }
+
+        function displayVideo(videoId) {
+            const container = document.getElementById('youtube-player');
+            container.innerHTML = `<iframe class="youtube-video" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>`;
+        }
+
+        function handleError(error) {
+            console.error('Error:', error);
+        }
+
+        loadYouTubeAPI();
     </script>
 </body>
 </html>

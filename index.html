@@ -1,43 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* 既存のCSSスタイルは省略 */
-  </style>
-  <title>Andy Taka Music</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: url('https://yt3.googleusercontent.com/HbX9VPPKkpNUuv7RH1QBxmUmlnPXmvBNhxwSSLTetsq_Tycj_-tnOvypwN962-yY1OGis0EZig=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            margin: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #science-section {
+            position: relative;
+        }
+
+        #science-icon {
+            content: url('https://yt3.googleusercontent.com/Dszm_8acBHpFVy612Jvag4WFJLgDtVkGJskScF9rN1w12-9nr2cBmiIjr5dngxiZMVLJHjOa2ag=s100-c-k-c0x00ffffff-no-rj');
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: -12px;
+            left: -12px;
+        }
+
+        #live-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .youtube-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+        }
+
+        .youtube-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <title>Andy Taka Music</title>
 </head>
 <body>
-  <header>
-    <h1>Andy Taka Music</h1>
-  </header>
-  <section id="music-section">
-    <!-- ここに音楽関連のコンテンツを追加 -->
-  </section>
-  <section id="live-section">
-    <h2>ライブ情報</h2>
-    <ul>
-      <li>
-        日程: 12/31（日）<br>
-        出演時間: 13:20<br>
-        演奏時間: 15分間<br>
-        場所: ららぽーと門真 島村楽器
-      </li>
-      <li>
-        日程: 1/28（日）<br>
-        出演時間: 未定<br>
-        演奏時間: 未定<br>
-        場所: イオン大日島村楽器
-      </li>
-    </ul>
-    <!-- 他のライブ情報も必要に応じて追加 -->
-  </section>
-  <footer>
-    <p>&copy; 2023 Andy Taka Music</p>
-  </footer>
-  <script>
-    // ここにJavaScriptコードを追加
-  </script>
+    <header>
+        <h1>Andy Taka Music</h1>
+    </header>
+    <section id="music-section">
+        <!-- ここに音楽関連のコンテンツを追加 -->
+    </section>
+    <section id="science-section">
+        <div id="science-icon"></div>
+    </section>
+    <section id="live-section">
+        <h2>ライブ情報</h2>
+        <ul>
+            <li>
+                日程: 12/31（日）<br>
+                出演時間: 13:20<br>
+                演奏時間: 15分間<br>
+                場所: ららぽーと門真 島村楽器
+            </li>
+            <li>
+                日程: 1/28（日）<br>
+                出演時間: 未定<br>
+                演奏時間: 未定<br>
+                場所: イオン大日島村楽器
+            </li>
+        </ul>
+    </section>
+    <section id="youtube-section">
+        <h2>再生数の多い動画</h2>
+        <div class="youtube-container" id="youtube-player"></div>
+    </section>
+    <footer>
+        <p>&copy; 2023 Andy Taka Music</p>
+    </footer>
+    <script>
+        // 以前提供されたYouTube APIコードをここに追加
+    </script>
 </body>
 </html>
